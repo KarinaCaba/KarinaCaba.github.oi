@@ -1,0 +1,326 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+ 
+h1{font-size: 3em;}
+h2{font-size: 2.7em;}
+h3{font-size: 2em;}
+p{font-size: 1.25em;}
+ul{list-style: none;}
+li{font-size: 1.25em;}
+
+button{
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0,0, 0.3);
+    box-shadow: 2px 2px 10px rgba(0, 0,0, 0.5);
+    color:white;
+    background-color: blueviolet;
+    
+}
+button:hover{
+    background-color: rgb(101, 33, 165) ;
+}
+
+.color-acento{color:darkblue}
+.color-blanco{text-shadow: 2px 2px 3px rgba(255, 255, 255);}
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+header{
+    background-color: rgb(245, 245,245);
+}
+
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color:darkblue;
+    font-size: 1.6em;
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom:25px ;
+}
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color:black
+}
+
+header a:hover{
+    color:blueviolet;
+}
+#hero button{
+    font-size: 1.75em;
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    color:white;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+
+    )
+    ,url("trailer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+}
+
+#somos{
+
+}
+
+#somos .container{
+    text-align: center;
+    padding: 100px 12px;
+}
+#Servicios .container{
+    text-align: center;
+    padding: 100px 12px;
+
+}
+#Servicios h3{
+    color:cornflowerblue;
+}
+#Servicios .servicios
+{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius:40px ;
+   
+}
+
+
+#Testimonios{
+    
+    color: white;
+    text-align: center;
+}
+#Testimonios .container{
+    padding: 150px 12px;
+  
+
+}
+#Testimonios h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+
+#Testimonios .testimonios
+{
+    background-position: center center;
+    background-size:cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius:15px ;
+    
+   
+}
+
+.testimonios:first-child{
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+
+    )
+    ,url("testimonio.jpg");
+    
+}
+
+.testimonios:nth-child(2){
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+
+    )
+    ,url("testimonio3.jpg");
+}
+.testimonios:nth-child(3){
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+
+    )
+    ,url("testimonio2.jpg");
+}
+
+img{
+    width: 50px;
+    height: 50px;
+}
+#Cotizar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:white;
+    height: 80vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+
+    )
+    ,url("El-Sector-del-Autotransporte-en-Mexico.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#Cotizar h2{
+    font-size: 9vw;
+}
+#Cotizar button{
+    font-size: 4vw;
+}
+footer{
+    background-color:rgb(230,230,230);
+}
+footer p{
+    margin: 0;
+    padding: 12px;
+    color:rgb(100, 100,100);
+}
+footer.container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media(min-width: 850px)
+{
+    header{
+        position: fixed;
+        width: 100%;
+    }
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav
+    {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #hero h1{
+        font-size: 4em ;
+    }
+
+    #somos .container{
+
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #somos .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #somos h2{
+        margin-top: 0px;
+    }
+    #somos .img-container{
+        background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+
+    )
+    ,url("somos.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 400px;
+
+    }
+
+    #Testimonios .programas{
+        display: flex;
+        justify-content: center;
+    }
+    #Testimonios p{
+        display: block;
+    }
+    #Testimonios h3{
+        margin-top: 0;
+    }
+    #Testimonio .testimonios{
+        padding: 15px;
+    }
+
+    #Servicios .programas{
+        display: flex;
+        justify-content: center;
+    }
+    #Servicios h2{
+        margin-top: 15px;
+    }
+    #Servicios .servicios{
+        padding: 15px;
+    }
+
+    #Cotizar h2{
+        font-size: 6em;
+
+    }
+    #Cotizar button{
+        font-size: 2em;
+    }
+
+    footer .container{
+        justify-content: flex-end;
+    }
+
+}
