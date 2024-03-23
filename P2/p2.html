@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="spring-boot-logo-24.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Practica 2</title>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: #e4e4e4;;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12.5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.navbar a{
+    position: relative;
+    font-size: 16px;
+    color: #e4e4e4;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e4e4e4;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s;
+
+}
+
+.navbar a:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.buscar-bar{
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #e4e4e4;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.buscar-bar input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline:none;
+    font-size: 16px;
+    color:#e4e4e4;
+    padding-left: 10px;
+}
+
+.buscar-bar input::placeholder{
+    color:#e4e4e4;
+}
+
+.buscar-bar button{
+    width:40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none ;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    cursor: pointer;
+}
+.buscar-bar button i{
+    font-size: 22px;
+    color: #e4e4e4;
+}
+.background{
+    width: 100px;
+    height: 50vh;
+    background:transparent;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+
+}
+.container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 750px;
+    background: url("canva.png") no-repeat;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 30px;
+
+
+}
+.container .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    background:transparent;
+    border-radius: 10px;
+    padding: 80px;
+    color: #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+.content .logo{
+    font-size: 30px;
+}
+.text-sci  h2{
+    font-size: 40px;
+    line-height: 1;
+}
+.text-sci h2 span{
+    font-size: 25px;
+}
+.text-sci p{
+    font-size: 16px;
+    margin: 20px 0;
+
+}
+.social-icons a i{
+    font-size: 22px;
+    color: #e4e4e4;
+    margin-right: 10px;
+    transition: .5s ease;
+}
+.social-icons a:hover i{
+    transform: scale(1.2);
+
+}
+.container .logreg-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    overflow: hidden;
+   
+}
+
+.logreg-box .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5));
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #e4e4e4;
+
+}
+
+.logreg-box .form-box.login{
+    transform: translateX(0);
+    transition: transform .6s ease;
+    transition-delay: .7s ;
+}
+.logreg-box.active .form-box.login{
+    transform: translateX(500px);
+    transition-delay:0s ;
+}
+.logreg-box .form-box.register{
+    transform: translateX(500px);
+    transition: transform .6s ease;
+    transition-delay:0s;
+}
+
+.logreg-box.active .form-box.register{
+    transform: translate(0);
+    transition: .7s;
+}
+
+.form-box h2{
+    font-size: 32px;
+    text-align: center;
+}
+
+.form-box .input-box
+{
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid #e4e4e4;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: 500;
+    padding-right: 28px;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top:-5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    top:13px;
+    right: 0;
+    font-size: 19px;
+}
+
+.form-box .remember {
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember label input{
+    accent-color: #e4e4e4;
+    margin-right: 3px;
+
+}
+
+.remember a{
+    color: #e4e4e4;
+    text-decoration: none;
+}
+ .remember a:hover{
+    text-decoration: underline;
+ }
+
+
+
+ .btn {
+    margin-top:25px;
+    width: 100%;
+    height: 45px;
+    background:darkmagenta;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    
+
+ }
+ .btn:hover {
+
+    background-color:darkorchid;
+}
+
+ .form-box .login-register{
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+
+ }
+
+ .login-register p a{
+    color: #e4e4e4;
+    font-weight: 600;
+    text-decoration: none;
+ }
+
+ .login-register p a:hover {
+    text-decoration: underline;
+ }
+
+ 
+ label[for="fileInput"] {
+    padding: 8px 18px;
+    background-color:darkmagenta;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+label[for="fileInput"]:hover {
+    background-color: darkorchid;
+}
+
+    </style>
+</head>
+<body>
+    <div class="background"> </div>
+    <header class="header">
+        <nav class="navbar">
+            <a href="prac2.html">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contactanos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2 class="logo"><i class='bx bxl-spring-boot'></i>KAlaNic</h2>
+            <div class="text-sci">
+                <h2>Bienvenidos! <br> <span>A nuestro nuevo Sitio web</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, sunt.</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="#"><i class='bx bxl-facebook' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="logreg-box">
+            <div class="form-box login" id="login-container">
+                <form action="http://monsterballgo.com/api/login.php" method="post">
+                    <h2>Iniciar sesión</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="username" name="user" required="">
+                        <label>Usuario</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password" id="password" name="pass" required="">
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember">
+                        <label>
+                            <input type="checkbox">Recuérdame
+                        </label>
+                        <a href="#">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <input type="hidden" id="hiddenField" name="token" value="code37">
+                    
+                    <button type="submit" class="btn">Iniciar sesión</button>
+                    
+                    <div class="login-register">
+                        <p>¿Primera vez que usa KAlaNic? <a href="#" class="register-link">Registrate</a></p>
+                        
+                    </div>
+                    
+                </form>
+            </div>
+
+
+         
+            <div class="form-box register" id="register-container">
+                <form action="http://monsterballgo.com/api/register.php" method="post">
+                    <h2>Registro</h2>
+
+                    
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="user_name" name="username" required="">
+                        <label>Nombre de Usuario</label>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password" id="password" name="pass" required="">
+                        <label>Contraseña</label>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-check-shield' ></i></span>
+                        <input type="text" id="id" name="id" required="">
+                        <label>Matricula</label>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope' ></i></span>
+                        <input type="email" id="email" name="email" required="">
+                        <label>Correo</label>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="first_name" name="firstname" required="">
+                        <label>Nombre</label>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="last_name" name="lastname" required="">
+                        <label>Apellidos</label>
+                    </div>
+                    <div>
+                       <input type="file" id="fileInput" name="file" accept="image/*" style="display: none;" />
+                        <label for="fileInput" id="fileInputLabel">Elegir archivo</label>
+                    </div>
+                
+                    <input type="hidden" id="hiddenField" name="token" value="code37">
+                    <button type="submit" class="btn">Registrate</button>
+                    
+                    <div class="login-register">
+                        <p>¿Ya tienes un cuenta? <a href="#" class="login-link">Iniciar sesión</a></p>
+                        
+                    </div>
+                </form>
+            </div>
+           
+
+        </div>
+    </div>
+
+    <script>
+
+const logregBox = document.querySelector('.logreg-box');
+const loginLink = document.querySelector('.login-link');
+const registerLink = document.querySelector('.register-link');
+
+registerLink.addEventListener('click', () => {
+    logregBox.classList.add('active');
+});
+
+loginLink.addEventListener('click', () => {
+    logregBox.classList.remove('active');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    async function hashPassword(password) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(password);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        return hashHex;
+    }
+
+    function validateLogin(username, password) {
+        if (username.trim() === '' || password.trim() === '') {
+            alert('Por favor, ingrese un nombre de usuario y una contraseña.');
+            return false;
+        }
+        return true;
+    }
+
+
+    function submitLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (validateLogin(username, password)) {
+            hashPassword(password).then(hashedPassword => {
+                const formdata = new FormData();
+                formdata.append("user", username);
+                formdata.append("pass", hashedPassword);
+                formdata.append("token", "code37");
+
+                fetch("http://monsterballgo.com/api/login.php", {
+                    method: 'POST',
+                    body: formdata
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert("Error: " + data.error);
+                    } else {
+                        console.log("Datos de usuario:", data);
+                        localStorage.setItem('userData', JSON.stringify(data));
+                        window.location.href = "https://karinacaba.github.io/KarinaCaba.github.oi/P2/sesion.html";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error: " + error);
+                    alert("Se produjo un error al procesar la solicitud.");
+                });
+            });
+        }
+    }
+
+    
+    function validateLogin(username, password) {
+        if (username.trim() === '' || password.trim() === '') {
+            alert('Por favor, ingrese un nombre de usuario y una contraseña.');
+            return false;
+        }
+        return true;
+    }
+
+    function submitRegister() {
+        const username = document.getElementById("user_name").value;
+        const password = document.getElementById("password").value;
+        const id = document.getElementById("id").value;
+        const firstName = document.getElementById("first_name").value;
+        const lastName = document.getElementById("last_name").value;
+        const email = document.getElementById("email").value;
+        const Image = document.getElementById("fileInput").value;
+
+        hashPassword(password).then(hashedPassword => {
+            const formdata = new FormData();
+            formdata.append("token", "code37");
+            formdata.append("id", id);
+            formdata.append("username", username);
+            formdata.append("pass", hashedPassword);
+            formdata.append("firstname", firstName);
+            formdata.append("lastname", lastName);
+            formdata.append("email", email);
+            formdata.append("fileInput",Image);
+
+            fetch("http://monsterballgo.com/api/register.php", {
+                method: 'POST',
+                body: formdata
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert("Error: " + data.error);
+                } else {
+                    console.log("Usuario registrado:", data);
+
+                    //document.getElementById("register-container").style.display = 'none';
+                    //document.getElementById("login-container").style.display = 'block';
+                    alert("Registro exitoso");
+                }
+            })
+            .catch(error => {
+                console.error("Error: " + error);
+                alert("Se produjo un error al procesar la solicitud.");
+            });
+        });
+    }
+
+    // Event listeners
+    const loginBtn = document.getElementById("login-container");
+    const registerBtn = document.getElementById("register-container");
+    if (loginBtn) {
+        loginBtn.addEventListener("submit", function(event) {
+            event.preventDefault();
+            submitLogin();
+        });
+    }
+    if (registerBtn) {
+        registerBtn.addEventListener("submit", function(event) {
+            event.preventDefault();
+            submitRegister();
+        });
+    }
+});
+
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    var fileName = event.target.files[0].name;
+    document.getElementById('fileInputLabel').textContent = fileName;
+});
+
+
+
+    </script>
+</body>
+</html>

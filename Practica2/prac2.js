@@ -2,6 +2,7 @@ const logregBox = document.querySelector('.logreg-box')
 const loginLink = document.querySelector('.login-link')
 const registerLink = document.querySelector('.register-link')
 
+
 registerLink.addEventListener('click',() => {
     logregBox.classList.add('active')
 })
@@ -21,24 +22,18 @@ async function hashPassword(password) {
 
 function submitData()
 {
-    
-    username = document.getElementById("username").value;
-    password = document.getElementById("password").value;
+
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
     token = "code37";
     container = document.getElementById("login-container");
 
     if(validateForm(username,password))
     {
-        //ocultar el container y poner un relojito 
-        container.style.display = 'none';
-        var img = document.createElement("h1");
-        var img2 = document.createElement("img");
-        img.innerHTML = "⌛";
-        img2.src = "clock.jpg";
-        document.body.appendChild(img);
-        document.body.appendChild(img2);
-        //preparar la form en formato form-data
-        var formdata = new FormData();
+            
+        
+        const formdata = new FormData();
         formdata.append("user",username);
         formdata.append("pass",password);//hay que hashear el pass
         formdata.append("token",token);
@@ -51,14 +46,21 @@ function submitData()
             then(data => {
                 //codigo en caso de exito 
                 //quitar el indicador 
-                img.style.display = 'none';
-                img2.style.display = 'none';
-                alert("retorno la promesa")
+                //img.style.display = 'none';
+                //img2.style.display = 'none';
+                //alert("retorno la promesa")
+                
+                        console.log("Datos de usuario:", data);
+                        localStorage.setItem('userData', JSON.stringify(data));
+                        window.location.href = "https://www.google.com";
+
+
             }).
             catch(error => {
                 console.error("Error"+error);
         });
 
+        
     }
 
 }
@@ -96,7 +98,7 @@ function submitRegister(){
             formdata.append("email", email);
             formdata.append("firtname", first_name);
             formdata.append("lastname", last_name);
-            formdata.append("file",file);
+            formdata.append("file",file);j
             formdata.append("token",token);
 
             // Hacer una petición HTTP para el registro y procesarla como promesas
