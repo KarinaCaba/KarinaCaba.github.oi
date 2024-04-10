@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="idioma.png">
+    <title>Idiomas</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+        }
+    body {
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("fondo2.webp");
+
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 30px;
+  }
+  
+    .container {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 450px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+   
+    
+    }
+    .contenido {
+        margin-top:auto;
+    }
+    button {
+    margin-top:25px;
+    width: 50%;
+    height: 30px;
+    background:darkmagenta;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #e4e4e4;
+    font-weight: 300;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    
+
+ }
+    button:hover {
+
+    background-color:darkorchid;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contenido">
+    <h1 id="title">Welcome</h1>
+    <p id="description">This is a simple language switcher example.</p>
+
+    <div id="language-select">
+        <button id="en-btn">English</button>
+        <button id="es-btn">Español</button>
+        <button id="it-btn">Italiano</button>
+        <button id="de-btn">Deutsch</button>
+        <button id="fr-btn">Français</button>
+    </div>
+    </div>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
