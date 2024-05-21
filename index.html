@@ -1,99 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>CabiUx</title>
-
+    <link rel="icon" href="logo.png">
     <style>
      *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
-    body{
-        background-color: bisque;
-    }
-    .container{
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    .Titulo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        height: 100vh;
-        color:white;
-        background-image: linear-gradient(
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+h1{font-size: 3em;}
+    #me{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    color:white;
+    background-image: linear-gradient(
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
 
-        )
-        ,url("fondo.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    }
-
-     .contenido{
-
-        width: 300px;
-        border-radius: 20px;
-        box-shadow: 2px 2px #3333;
-        background-color:white;
-        padding: 2px;
-        text-align: center;
-        border: 2px solid #444;
-
-    }
-
-
-    a{
-        display: block;
-        margin: 50px 20px;
-        text-decoration: none;
-        color:peru;
-    }
-    
-    a:hover{
-        color:lightpink;
+    )
+    ,url("fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+    .navbar-nav .nav-link:hover {
+        color: #007bff;
     }
 
     </style>
 
-</head>
-<body>
-
-    <div class="container">
     
-        <div class="Titulo">
-        <h1>Trabajos KarinaCaba</h1>
-    
-            <div class="contenido">
-                <a href="https://karinacaba.github.io/KarinaCaba.github.oi/tarea1/tarea.html">Tarea 1</a>
-            </div>
-            <div class="contenido">
-                <a href="https://karinacaba.github.io/KarinaCaba.github.oi/P1/practica1.html">Practica 1</a>
-            </div>
-            <div class="contenido">
-                <a href="https://karinacaba.github.io/KarinaCaba.github.oi/LoginOsc/login.html">Formulario</a>
-            </div>
-            <div class="contenido">
-                <a href="https://karinacaba.github.io/KarinaCaba.github.oi/P2/p2.html">Practica 2</a>
-            </div>
-            <div class="contenido">
-                <a href="https://karinacaba.github.io/KarinaCaba.github.oi/idioma/idioma.html">Idiomas</a>
+        
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class='bx bxs-invader bx-md'></i> CabiUx</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Trabajos</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a id="link" class="nav-link active" aria-current="page" href="https://karinacaba.github.io/KarinaCaba.github.oi/tarea1/tarea.html">Tarea 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="link"  class="nav-link active" aria-current="page" href="https://karinacaba.github.io/KarinaCaba.github.oi/P1/practica1.html">Práctica 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  id="link" class="nav-link active" aria-current="page" href="https://karinacaba.github.io/KarinaCaba.github.oi/LoginOsc/login.html">Formulario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="link"  class="nav-link active" aria-current="page" href="https://karinacaba.github.io/KarinaCaba.github.oi/P2/p2.html">Práctica 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="link"  class="nav-link active" aria-current="page" href="https://karinacaba.github.io/KarinaCaba.github.oi/idioma/idioma.html">Idioma</a>
+                        </li>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-            
-</body>
+    </nav>
+    
+
+    <section id="me">
+        <h1><span class="color-blanco">Portafolio</span> Karina Caballero <br>
+        Progarmación de aplicaciones y servicios web</h1>
+    </section>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+      </body>
 </html>
